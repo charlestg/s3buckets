@@ -4,7 +4,7 @@ Parameters:
     BucketName: 
         Description: A name for bucket
         Type: String
-        Default: source-code-bucket
+        Default: codepipeline-test
     EnvType:
         Description: Environment type.
         Default: dev
@@ -17,7 +17,7 @@ Resources:
     S3Bucket: 
         Type: AWS::S3::Bucket
         Properties:
-            BucketName: codepipeline-test-create
+            BucketName: !Sub  ${BucketName}-${EnvType}
             VersioningConfiguration:
                 Status: Enabled
 Outputs:
