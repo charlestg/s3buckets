@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Parameters: 
+    BucketName: 
+        Description: A name for bucket
+        Type: String
+        Default: source-code-bucket
+    EnvType:
+        Description: Environment type.
+        Default: dev
+        Type: String
+        AllowedValues:
+        - prod
+        - dev
+        ConstraintDescription: must specify prod or dev.
+Resources: 
+    S3Bucket: 
+        Type: AWS::S3::Bucket
+        Properties:
+            BucketName: codepipeline-test-create
+            VersioningConfiguration:
+                Status: Enabled
+Outputs:
+    BucketName:
+        Value: !Ref S3Bucket
+        Description: Name of the sample Amazon S3 bucket.
