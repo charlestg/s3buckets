@@ -1,6 +1,6 @@
 {
   "Parameters" : {
-    "BucketName" : "source-code-bucket-test",
+    "BucketName" : "codepipeline-test",
     "EnvType" : "dev"
   }
 }
